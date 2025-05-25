@@ -5,8 +5,8 @@ const router = express.Router();
 
 router.get("/", listarFilmes);
 router.get("/filtrar", filtrarFilmes);
-router.post("/adicionar", adicionarFilme);
-router.put("/edit", editarFilme);
-router.delete("/delet", deletarFilme);
+router.post("/", adicionarFilme);
+router.put("/:id", editarFilme);
+router.delete("/:id", deletarFilme);
 
 export default router;
