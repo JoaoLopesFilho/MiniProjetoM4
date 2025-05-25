@@ -28,7 +28,7 @@ function listafilmes (req, res) {
     const { nome, tipo, autor, data, descricao } = req.body;
   
     // Validação dos campos obrigatórios
-    if (!titulo || !tipo || !autor || !data) {
+    if (!nome || !tipo || !autor || !data) {
       return res.status(400).json({ mensagem: "Título, tipo, autor e data são obrigatórios!" });
     }
   
