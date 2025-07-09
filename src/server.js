@@ -17,4 +17,3 @@ app.get('/117', (req, res) => {
 app.listen(PORT, () => {
   console.log('Servidor rodando na porta ${PORT}');
 });
-Server.js
