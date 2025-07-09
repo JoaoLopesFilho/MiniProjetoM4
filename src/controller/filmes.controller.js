@@ -32,13 +32,22 @@ function adicionarFilme(req, res) {
 }
 
 // Filtrar por tipo
+
 function filtrarFilmes(req, res) {
-  const { tipo } = req.query;
+  const { tipo, nome } = req.query;
+  let filtrados = listaFilmes;
+
   if (tipo) {
-    const filtrados = listaFilmes.filter(item => item.tipo.toLowerCase() === tipo.toLowerCase());
-    return res.status(200).json(filtrados);
+    filtrados = filtrados.filter(item => item.tipo.toLowerCase() === tipo.toLowerCase());
   }
-  res.status(200).json(listaFilmes);
+
+  if (nome) {
+    filtrados = filtrados.filter(item =>
+      item.nome.toLowerCase().includes(nome.toLowerCase())
+    );
+  }
+
+  res.status(200).json(filtrados);
 }
 
 // Editar filme/série
